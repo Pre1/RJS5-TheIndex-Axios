@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import BookRow from "./BookRow";
 
+import axios from "axios";
+
 class AuthorDetail extends Component {
   render() {
     const author = this.props.author;
     const authorName = `${author.first_name} ${author.last_name}`;
+
 
     const books = author.books.map(book => (
       <BookRow book={book} key={book.title} author={author} />
